@@ -4,13 +4,13 @@ import com.mayueyue.model.User;
 import org.springframework.stereotype.Repository;
 
 /**
- *
+ *---------
  * @Author: 姚飞虎
  * @Date: 2020/12/17 7:30 下午
  * @Description:
  */
 public interface UserMapper {
-    //20201217
+
 
     User getNameById(long userId);
 }
