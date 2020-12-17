@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
  * @Description:
  */
 public interface UserMapper {
+    //20201217
 
     User getNameById(long userId);
 }
