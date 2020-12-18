@@ -8,5 +8,8 @@
         from `user`
         where id = #{userId,jdbcType=INTEGER}
     </select>
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from `user`  where id=#{userid,jdbc=INTEGER}
+    </delete>
 
 </mapper>
