@@ -13,4 +13,5 @@ public interface UserMapper {
 
 
     User getNameById(long userId);
+    int deleteById(long userId);
 }

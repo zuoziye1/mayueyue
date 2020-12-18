@@ -24,5 +24,11 @@ class MayueyueApplicationTests {
         User nameById = userMapper.getNameById(1);
         System.out.println(nameById);
     }
+    @Test
+    public void tesdelete(){
+        System.out.println("删除成功");
+        userMapper.deleteById(3);
+
+    }
 
 }
