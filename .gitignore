@@ -7,7 +7,21 @@
 # BlueJ files
 *.ctxt
 
+# 忽略一些文件夹和文件夹下的内容
+
+# 忽略文件夹下的所有内容
 .idea/*
+
+# 忽略整个mtk文件夹
+# 匹配模式可以以（/）结尾指定目录
+mtk/
+mvnw/
+
+# 忽略某个文件
+mvnw.cmd
+
+# 忽略后缀
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
