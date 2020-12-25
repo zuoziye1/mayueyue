@@ -6,10 +6,10 @@
         select
         id,user_name as name ,age
         from `user`
-        where id = #{userId,jdbcType=INTEGER}
+        where id = #{userId}
     </select>
     <delete id="deleteById" parameterType="java.lang.Long">
-        delete from `user`  where id=#{userid,jdbc=INTEGER}
+        delete from `user`  where id=#{userId}
     </delete>
 
     <select id="getUsers" resultType="com.mayueyue.model.User" parameterType="java.lang.Integer" >
