@@ -24,6 +24,7 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
+
 # 这个目录下打印debug日志
 logging:
   level:
