@@ -35,14 +35,16 @@ public class UserController {
         }
 
     }
-    public void login(long userId,String account,String password){
-        if(account.equals(account)&&password.equals(password)){
-           //return "redirect:index.jsp";
-            System.out.println("登录成功");
+    public void login(String account,String password){
+        User user=new User();
+        if(account.equals(user.getAccount())&&password.equals(user.getPassword())){
+            System.out.println("登陆成功");
 
         }else{
-            System.out.println("帐号或者密码错误");
+            System.out.println("登录失败");
         }
+
+
 
     }
 }
