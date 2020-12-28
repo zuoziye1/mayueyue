@@ -50,22 +50,4 @@ class MayueyueApplicationTests {
 
     }
 
-    @Autowired
-    RestTemplate restTemplate;
-
-    @Test
-    public void test2() {
-        // 请求地址
-        String url = "http://localhost:9000/test";
-
-        // 要发送的数据对象
-        Map<String, Object> param = new HashMap<>();
-        param.put("name", "testName");
-
-        // 发送post请求，并输出结果
-        String result = restTemplate.postForObject(url, param, String.class);
-
-        System.out.println(result);
-    }
-
 }

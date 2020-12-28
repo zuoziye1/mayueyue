@@ -34,4 +34,10 @@
         where id=#{userId};
     </select>
 
+    <select id="checkName" resultType="java.lang.Integer">
+        select count(*)
+        from user
+        where user_name=#{name};
+    </select>
+
 </mapper>
