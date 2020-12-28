@@ -1,6 +1,7 @@
 package com.mayueyue.controller;
 
 import com.mayueyue.mapper.UserMapper;
+import com.mayueyue.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -17,7 +18,12 @@ public class UserController {
             System.out.println("你注册的昵称已经存在");
 
         }else{
-            userMapper.add(userId, name, account, password, telephone);
+            User user=new User();
+            user.getId();
+            user.getName();
+            user.getPassword();
+            user.getTelephone();
+            userMapper.add(user);
 
         }
 
