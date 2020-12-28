@@ -1,10 +1,14 @@
 package com.mayueyue.controller;
 
 import com.mayueyue.mapper.UserMapper;
+import com.mayueyue.model.BaseResult;
 import com.mayueyue.model.User;
+import com.mayueyue.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  @Author: 马月月
@@ -13,28 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
-    @Autowired
-    private UserMapper userMapper;
+
+    @Resource
+    UserService userService ;
 
     @RequestMapping("/register")
-    public void register(long userId,String name,String account,String password,String telephone){
-        // 判断数据库里是否有这个名字
-        int count = userMapper.checkName(name);
-
-        if(count > 0){
-            System.out.println("你注册的昵称已经存在");
-
-        }else{
-            User user=new User();
-            user.setName(name);
-            user.setPassword(password);
-            user.setTelephone(telephone);
-            user.setAccount(account);
-            userMapper.add(user);
-
-        }
-
+    public BaseResult register(String name, String account, String password, String telephone){
+        return userService.regist(name,account,password,telephone);
     }
+
     public void login(String account,String password){
         User user=new User();
         if(account.equals(user.getAccount())&&password.equals(user.getPassword())){
