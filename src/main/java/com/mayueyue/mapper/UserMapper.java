@@ -21,4 +21,6 @@ public interface UserMapper {
     List<User> add(long userId,String name,String account,String password,String telephone);
     List<User> login(long userId,String account,String password);
 
+    int checkName(String name);
+
 }

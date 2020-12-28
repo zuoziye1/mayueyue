@@ -12,6 +12,7 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
     public void register(long userId,String name,String account,String password,String telephone){
+
         if(name.equals(name)){
             System.out.println("你注册的昵称已经存在");
 
