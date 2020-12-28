@@ -1,7 +1,9 @@
 package com.mayueyue.mapper;
 
 import com.mayueyue.model.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,7 +23,8 @@ public interface UserMapper {
     void add(User user);
     List<User> login(long userId,String account,String password);
 
-    int select(String account,String password);
+    int select(@Param("account") String account, @Param("password") String password);
+    List<User> seletAll(User user);
 
     int checkName(String name);
 

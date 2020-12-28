@@ -32,7 +32,7 @@
 
     <select id="select" >
         select account,password from user
-        where account=#{account},password=#{password}
+        where account=#{account} and password=#{password}
     </select>
 
     <select id="login" parameterType="com.mayueyue.model.User">
@@ -45,6 +45,11 @@
         select count(*)
         from user
         where user_name=#{name};
+    </select>
+
+    <select id="seletAll" resultType="com.mayueyue.model.User">
+        select * from user
+        where id>1;
     </select>
 
 </mapper>

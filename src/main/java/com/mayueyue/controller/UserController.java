@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 /**
  @Author: 马月月
   * @Date: 2020/12/28 15:09 下午
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     @RequestMapping("/register")
@@ -43,9 +45,10 @@ public class UserController {
       }else{
           System.out.println("fail");
       }
-
-
-
+    }
+    @RequestMapping("/selectAll")
+    public void selectAll(User user){
+        userMapper.seletAll(user);
 
 
     }
