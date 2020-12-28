@@ -30,7 +30,7 @@
      values(#{name},#{account},#{password},#{telephone})
     </insert>
 
-    <select id="select" >
+    <select id="select" resultType="com.mayueyue.model.User">
         select account,password from user
         where account=#{account} and password=#{password}
     </select>
