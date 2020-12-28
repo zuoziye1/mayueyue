@@ -21,6 +21,8 @@ public interface UserMapper {
     void add(User user);
     List<User> login(long userId,String account,String password);
 
+    int select(String account,String password);
+
     int checkName(String name);
 
 }

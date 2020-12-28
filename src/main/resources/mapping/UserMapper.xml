@@ -30,6 +30,10 @@
      values(#{name},#{account},#{password},#{telephone})
     </insert>
 
+    <select id="select" >
+        select account,password from user
+    </select>
+
     <select id="login" parameterType="com.mayueyue.model.User">
         select account,password
         from user

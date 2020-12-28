@@ -37,14 +37,14 @@ public class UserController {
     }
     @RequestMapping("/login")
     public void login(String account,String password){
-        User user=new User();
+      userMapper.select(account,password);
+      if(account.equals(account)&&password.equals(password)){
+          System.out.println("注册成功");
+      }else{
+          System.out.println("fail");
+      }
 
-        if(account.equals(user.getAccount())&&password.equals(user.getPassword())){
-            System.out.println("登陆成功");
 
-        }else{
-            System.out.println("登录失败");
-        }
 
 
 
