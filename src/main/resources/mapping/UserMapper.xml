@@ -32,6 +32,7 @@
 
     <select id="select" >
         select account,password from user
+        where account=#{account},password=#{password}
     </select>
 
     <select id="login" parameterType="com.mayueyue.model.User">
