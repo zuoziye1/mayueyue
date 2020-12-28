@@ -18,5 +18,21 @@
         from `user`
         where age > 10
     </select>
+    <!--一下是我给登录和注册写的sql语句-->
+    <select id="regist" resultType="com.mayueyue.model.User">
+        select user_name as name,password,account,telephone
+        from 'user'
+        where id=#{userId}
+    </select>
+    <insert id="add" parameterType="com.mayueyue.model.User">
+     insert into 'user'(name,account,password,telephone)
+     values(#{user_name},#{account},#{password},#{telephone})
+     where id=#{userId}
+    </insert>
+    <select id="login" parameterType="com.mayueyue.model.User">
+        select account,password
+        from 'user'
+        where id=#{userId};
+    </select>
 
 </mapper>
