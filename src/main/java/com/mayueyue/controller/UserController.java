@@ -26,10 +26,9 @@ public class UserController {
 
         }else{
             User user=new User();
-            user.getId();
-            user.getName();
-            user.getPassword();
-            user.getTelephone();
+            user.setName(name);
+            user.setPassword(password);
+            user.setTelephone(telephone);
             userMapper.add(user);
 
         }

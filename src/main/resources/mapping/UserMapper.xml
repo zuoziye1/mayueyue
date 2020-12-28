@@ -24,10 +24,12 @@
         from user
         where id=#{userId}
     </select>
+
     <insert id="add" parameterType="com.mayueyue.model.User">
      insert into user(user_name,account,password,telephone)
      values(#{name},#{account},#{password},#{telephone})
     </insert>
+
     <select id="login" parameterType="com.mayueyue.model.User">
         select account,password
         from user
