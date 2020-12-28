@@ -29,6 +29,7 @@ public class UserController {
             user.setName(name);
             user.setPassword(password);
             user.setTelephone(telephone);
+            user.setAccount(account);
             userMapper.add(user);
 
         }

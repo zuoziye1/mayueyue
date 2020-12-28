@@ -21,4 +21,6 @@ public class User {
     private String role;
 
     private  String telephone;
+
+    private String account;
 }
