@@ -24,7 +24,14 @@ public interface UserMapper {
     List<User> login(long userId,String account,String password);
 
     User select(@Param("account") String account,@Param("password") String password);
-    List<User> seletAll(User user);
+
+    /**
+     * 翻页查询数据
+     * @param offset 起始位置
+     * @param pageSize 每页多少条
+     * @return
+     */
+    List<User> selectAll(@Param("offset") int offset,@Param("pageSize") int pageSize);
 
     int checkName(String name);
 

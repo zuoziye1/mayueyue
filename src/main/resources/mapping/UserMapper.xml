@@ -47,9 +47,15 @@
         where user_name=#{name};
     </select>
 
-    <select id="seletAll" resultType="com.mayueyue.model.User">
-        select * from user
-        where id>1;
+    <select id="selectAll" resultType="com.mayueyue.model.User">
+        select
+        <include refid="userColumns"/>
+        from user
+        limit #{offset},#{pageSize}
     </select>
+
+    <sql id = "userColumns">
+        user_name as name,account,telephone
+    </sql>
 
 </mapper>

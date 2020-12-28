@@ -1,12 +1,15 @@
 package com.mayueyue.controller;
 
 import com.mayueyue.mapper.UserMapper;
+import com.mayueyue.model.BaseResult;
 import com.mayueyue.model.User;
+import com.mayueyue.model.UserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  @Author: 马月月
@@ -33,7 +36,6 @@ public class UserController {
             user.setTelephone(telephone);
             user.setAccount(account);
             userMapper.add(user);
-
         }
 
     }
@@ -47,10 +49,13 @@ public class UserController {
           System.out.println("fail");
       }
     }
+
     @RequestMapping("/selectAll")
-    public void selectAll(User user){
-        userMapper.seletAll(user);
-
-
+    public BaseResult<List> selectAll(UserRequest userRequest){
+        int offset = ( userRequest.getPageNo() - 1 ) * userRequest.getPageSize();
+        List<User> users = userMapper.selectAll(offset,userRequest.getPageSize());
+        BaseResult success = BaseResult.success();
+        success.setData(users);
+        return success;
     }
 }
