@@ -19,8 +19,9 @@ public interface UserMapper {
     User getNameById(long userId);
     int deleteById(long userId);
     List<User> getUsers(int age);
-    List<User> regist(long userId,String name,String account,String password,String telephone);
+    List<User> regist(String name,String account,String password,String telephone);
     void add(User user);
+
     List<User> login(long userId,String account,String password);
 
     User select(@Param("account") String account,@Param("password") String password);
