@@ -21,6 +21,11 @@ public class UserController {
     @Resource
     private UserMapper userMapper;
 
+    @RequestMapping("/")
+    public void test(){
+        System.out.println("-------------");
+    }
+
     @RequestMapping("/register")
     public void register(long userId,String name,String account,String password,String telephone){
         // 判断数据库里是否有这个名字
@@ -57,5 +62,42 @@ public class UserController {
         BaseResult success = BaseResult.success();
         success.setData(users);
         return success;
+    }
+
+
+    public static void main(String[] args) {
+        int sum = sum(3, 2);
+        System.out.println(sum);
+        int jianfa = jianfa(3, 5);
+        System.out.println(jianfa);
+
+    }
+
+    public static int sum(int a,int b){
+        System.out.println("-------->");
+
+        String test = "";
+        int length = test.length();
+        a = b * a /  2 ;
+
+        /**
+         * a = 3 , b = 2
+         * a :  0011
+         * b :  0010
+         * ----------
+         *      0011 === 3
+          */
+        b = b | a ;
+        return a + b ;
+    }
+
+    public static int jianfa(int a , int b){
+        a = a * a ;
+
+        b = b * b ;
+
+        System.out.println("========");
+
+        return a - b ;
     }
 }
