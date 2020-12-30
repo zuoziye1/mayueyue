@@ -27,4 +27,12 @@ public class PageHelperController {
     public PageResult getPageData(PageRequest pageRequest){
         return pageHelperService.findPage(pageRequest);
     }
+
+    public void test(){
+        // 参数准备
+        System.out.println("参数准备");
+        pageHelperService.findPage(null);
+        // 返回数据的准备
+        System.out.println("返回数据的准备");
+    }
 }
