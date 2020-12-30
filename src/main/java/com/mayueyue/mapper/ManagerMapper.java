@@ -1,5 +1,7 @@
 package com.mayueyue.mapper;
 
+import org.apache.ibatis.annotations.Param;
+
 /**
  * @Author: 马月月
  * @Date: 2020/12/30 10:35
@@ -19,7 +21,6 @@ public interface ManagerMapper {
      * @return
      */
     int updateOne(String name);
-
 
 
 }

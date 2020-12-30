@@ -36,4 +36,6 @@ public interface UserMapper {
 
     int checkName(String name);
 
+    int updateId(@Param("id") long id,@Param("name") String name);
+
 }

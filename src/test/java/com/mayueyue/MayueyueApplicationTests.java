@@ -11,6 +11,7 @@ import lombok.Data;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.DigestUtils;
@@ -51,7 +52,15 @@ class MayueyueApplicationTests {
     public void tesdelete(){
         System.out.println("删除成功");
         userMapper.deleteById(3);
+    }
 
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
+
+    @Test
+    public void set(){
+        redisTemplate.opsForValue().set("myKey","myValue");
+        System.out.println(redisTemplate.opsForValue().get("myKey"));
     }
 
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.mayueyue.mapper.UserMapper" >
+    <update id="updateId">
+        update user set user_name = #{name} where id = #{id}
+    </update>
 
     <select id="getNameById" resultType="com.mayueyue.model.User" parameterType="java.lang.Long" >
         select
@@ -55,7 +58,7 @@
     </select>
 
     <sql id = "userColumns">
-        user_name as name,account,telephone
+        id,user_name as name,account,telephone
     </sql>
 
 </mapper>

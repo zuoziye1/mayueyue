@@ -22,13 +22,9 @@ public class ManagerController {
        int i=managerMapper.getall(name);
        if(i == 0){
            System.out.println("不存在该商品");
-
        }else{
            System.out.println();
        }
-
-
-
     }
 
 }
