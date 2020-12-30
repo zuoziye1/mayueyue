@@ -22,7 +22,7 @@ public interface UserMapper {
     List<User> regist(String name,String account,String password,String telephone);
     void add(User user);
 
-    List<User> login(long userId,String account,String password);
+    List<User> login(String account,String password);
 
     User select(@Param("account") String account,@Param("password") String password);
 

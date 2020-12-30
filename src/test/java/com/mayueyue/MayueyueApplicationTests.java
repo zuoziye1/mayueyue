@@ -3,6 +3,7 @@ package com.mayueyue;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mayueyue.mapper.ManagerMapper;
 import com.mayueyue.mapper.UserMapper;
 import com.mayueyue.model.PostDTO;
 import com.mayueyue.model.User;
@@ -32,6 +33,9 @@ class MayueyueApplicationTests {
     @Resource
     UserMapper userMapper;
 
+    @Resource
+    ManagerMapper managerMapper;
+
     @Test
     void contextLoads() {
     }
@@ -49,5 +53,6 @@ class MayueyueApplicationTests {
         userMapper.deleteById(3);
 
     }
+
 
 }
