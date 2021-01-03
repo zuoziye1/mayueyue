@@ -14,4 +14,22 @@
         where pname=#{name}
     </update>
 
+    <select id="checkName" resultType="java.lang.Integer">
+        select count(*)
+        from product
+        where pname=#{name}
+
+    </select>
+
+    <delete id="deleteOne" parameterType="java.lang.Long">
+        delete from product
+        where pname=#{name}
+
+    </delete>
+    <select id="selectCount" resultType="java.lang.Integer">
+        select kucun
+        from product
+        where pname=#{name}
+    </select>
+
 </mapper>

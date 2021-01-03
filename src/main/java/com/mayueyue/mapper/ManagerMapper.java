@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 public interface ManagerMapper {
     /**
      * 查询都有哪些商品
-     * @param name
+     * @param  name
      * @return
      */
     int getall(String name);
@@ -20,7 +20,31 @@ public interface ManagerMapper {
      * @param name
      * @return
      */
-    int updateOne(String name);
+    int updateOne(@Param("name") String name,@Param("newpnum") int newpnum,@Param("newkucun") int newkucun);
+
+    /**
+     * 查询某个商品有多少条记录
+     * @param name
+     * @return
+     */
+    int checkName(String name);
+
+    /**
+     * 删除库存为0的商品
+     * @param name
+     * @return
+     */
+
+    int deleteOne(String name);
+
+    /**
+     * 查询商品的库存量
+     * @param name
+     * @param remain
+     * @return
+     */
+   int selectCount(@Param("name") String name, @Param("remain") int remain);
+
 
 
 }
