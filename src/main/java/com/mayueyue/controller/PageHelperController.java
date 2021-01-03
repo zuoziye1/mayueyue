@@ -29,6 +29,23 @@ public class PageHelperController {
     }
 
     public void test(){
+        // 多张表 问卷调查的信息   封装成了页面想要的数据结构
+        /**
+         *  id name status
+         *
+         *  1, 2,3 ,4
+         *  1. 发短信 50 ms
+         *  2. 清除redis 30 ms
+         *
+         *  3. 另外表 记录 count 10ms
+         *
+         *  4. 发送消息给其他系统 60 ms
+         *
+         *  异步
+         *
+         *
+         */
+
         // 参数准备
         System.out.println("参数准备");
         pageHelperService.findPage(null);

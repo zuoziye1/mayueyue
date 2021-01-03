@@ -31,7 +31,7 @@ public class aop打印日志 {
 
 
     //在切入点的方法run之前要干的
-    @Before("controller() ")
+    @Before("controller()")
     public void logBeforeController(JoinPoint joinPoint) {
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();//这个RequestContextHolder是Springmvc提供来获得请求的东西
         HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
