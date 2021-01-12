@@ -1,7 +1,10 @@
 package com.mayueyue.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.mayueyue.mapper.UserMapper;
 import com.mayueyue.model.BaseResult;
+import com.mayueyue.model.PostDTO;
 import com.mayueyue.model.User;
 import com.mayueyue.model.UserRequest;
 import com.mayueyue.service.UserService;
@@ -72,6 +75,7 @@ public class UserController {
     @MyLog(requied = true)
     @RequestMapping("/selectAll")
     public BaseResult<List> selectAll(UserRequest userRequest) {
+
         int offset = (userRequest.getPageNo() - 1) * userRequest.getPageSize();
         List<User> users ;
         users = (List<User>) redisTemplate.opsForValue().get(key);
@@ -105,11 +109,14 @@ public class UserController {
 
 
     public static void main(String[] args) {
-        int sum = sum(3, 2);
-        System.out.println(sum);
-        int jianfa = jianfa(3, 5);
-        System.out.println(jianfa);
+        PostDTO postDTO = new PostDTO();
+        postDTO.setBody("body");
+        postDTO.setTitle("title");
+        postDTO.setUserId(1);
 
+        Gson gson = new Gson();
+        String jsonResult = gson.toJson(postDTO);
+        System.out.println(jsonResult);
     }
 
     public static int sum(int a, int b) {
